@@ -17,7 +17,7 @@ public class WaitNotifyInterupt {
                 System.out.println("---begin---");
                 try {
                     synchronized (obj) {
-                        obj.wait();
+                        obj.wait(); //没有考虑虚假唤醒
                     }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
