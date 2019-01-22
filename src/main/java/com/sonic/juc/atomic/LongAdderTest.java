@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.LongAdder;
 /**
  * LongAdderTest
  *
- * @auther Sonic
+ * @author Sonic
  * @since 2019/1/19
  */
 public class LongAdderTest {

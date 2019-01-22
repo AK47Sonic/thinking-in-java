@@ -5,7 +5,7 @@ import java.util.concurrent.Semaphore;
 /**
  * SemaphoreTest
  *
- * @auther Sonic
+ * @author Sonic
  * @since 2019/1/21
  */
 public class SemaphoreTest {

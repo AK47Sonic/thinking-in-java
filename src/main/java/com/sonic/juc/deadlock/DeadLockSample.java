@@ -3,7 +3,7 @@ package com.sonic.juc.deadlock;
 /**
  * DeadLockSample
  *
- * @auther Sonic
+ * @author Sonic
  * @since 2019/1/12
  */
 public class DeadLockSample {

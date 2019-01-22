@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * SleepLock
  * lock 如果不unlock, 即使线程A已经结束，其他线程仍然无法访问
  *
- * @auther Sonic
+ * @author Sonic
  * @since 2019/1/7
  */
 public class SleepLock {

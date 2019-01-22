@@ -3,7 +3,7 @@ package com.sonic.juc.sleep;
 /**
  * SleepInterrupted
  *
- * @auther Sonic
+ * @author Sonic
  * @since 2019/1/7
  */
 public class SleepInterrupted {

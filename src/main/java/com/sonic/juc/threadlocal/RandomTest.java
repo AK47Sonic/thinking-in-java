@@ -5,7 +5,7 @@ import java.util.concurrent.ThreadLocalRandom;
 /**
  * RandomTest
  *
- * @auther Sonic
+ * @author Sonic
  * @since 2019/1/17
  */
 public class RandomTest {

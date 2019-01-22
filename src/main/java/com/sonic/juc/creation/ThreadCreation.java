@@ -7,7 +7,7 @@ import java.util.concurrent.FutureTask;
 /**
  * Use Thread
  *
- * @auther Sonic
+ * @author Sonic
  * @since 2019/1/5
  */
 public class ThreadCreation {

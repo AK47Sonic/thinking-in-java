@@ -5,7 +5,7 @@ import java.util.Queue;
 /**
  * Consumer
  *
- * @auther Sonic
+ * @author Sonic
  * @since 2019/1/6
  */
 public class Consumer implements Runnable {

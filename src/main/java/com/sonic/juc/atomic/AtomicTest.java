@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.LongAccumulator;
 /**
  * AtomicTest
  *
- * @auther Sonic
+ * @author Sonic
  * @since 2019/1/18
  */
 public class AtomicTest {

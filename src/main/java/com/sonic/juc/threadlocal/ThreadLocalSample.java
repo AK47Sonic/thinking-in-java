@@ -3,7 +3,7 @@ package com.sonic.juc.threadlocal;
 /**
  * ThreadLocalSample
  *
- * @auther Sonic
+ * @author Sonic
  * @since 2019/1/13
  */
 public class ThreadLocalSample {

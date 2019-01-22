@@ -3,7 +3,7 @@ package com.sonic.juc.wait;
 /**
  * MultiMonitorLock
  *
- * @auther Sonic
+ * @author Sonic
  * @since 2019/1/6
  */
 public class MultiMonitorLock {

@@ -5,7 +5,7 @@ import java.util.Queue;
 /**
  * Productor
  *
- * @auther Sonic
+ * @author Sonic
  * @since 2019/1/6
  */
 public class Productor implements Runnable {

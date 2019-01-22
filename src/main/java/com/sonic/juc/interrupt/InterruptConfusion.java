@@ -3,7 +3,7 @@ package com.sonic.juc.interrupt;
 /**
  * InterruptConfusion
  *
- * @auther Sonic
+ * @author Sonic
  * @since 2019/1/12
  */
 public class InterruptConfusion {

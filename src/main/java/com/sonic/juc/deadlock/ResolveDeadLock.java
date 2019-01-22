@@ -3,7 +3,7 @@ package com.sonic.juc.deadlock;
 /**
  * ResolveDeadLock
  *
- * @auther Sonic
+ * @author Sonic
  * @since 2019/1/12
  */
 public class ResolveDeadLock {

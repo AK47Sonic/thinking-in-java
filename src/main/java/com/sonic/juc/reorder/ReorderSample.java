@@ -3,7 +3,7 @@ package com.sonic.juc.reorder;
 /**
  * ReorderSample
  *
- * @auther Sonic
+ * @author Sonic
  * @since 2019/1/15
  */
 public class ReorderSample {

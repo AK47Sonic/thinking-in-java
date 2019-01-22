@@ -3,7 +3,7 @@ package com.sonic.juc.yield;
 /**
  * YieldMain
  *
- * @auther Sonic
+ * @author Sonic
  * @since 2019/1/10
  */
 public class YieldMain implements Runnable {

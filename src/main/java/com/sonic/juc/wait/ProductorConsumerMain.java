@@ -6,7 +6,7 @@ import java.util.concurrent.LinkedTransferQueue;
 /**
  * ProductorConsumerMain
  *
- * @auther Sonic
+ * @author Sonic
  * @since 2019/1/6
  */
 public class ProductorConsumerMain {

@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
 /**
  * TestUnSafeRight
  *
- * @auther Sonic
+ * @author Sonic
  * @since 2019/1/15
  */
 public class TestUnSafeRight {
