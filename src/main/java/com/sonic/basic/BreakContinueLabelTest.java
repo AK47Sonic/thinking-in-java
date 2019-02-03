@@ -14,7 +14,9 @@ public class BreakContinueLabelTest {
             System.out.println("Pass " + i + ":");
             for (int j = 0; j < 20; j++) {
                 if (j == 10)
+//                    break;
 //                    break outer;
+//                    continue;
                     continue outer;
                 System.out.println(j + " ");
             }
