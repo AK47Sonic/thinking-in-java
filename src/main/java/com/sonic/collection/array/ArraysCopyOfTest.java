@@ -1,4 +1,4 @@
-package com.sonic.collection;
+package com.sonic.collection.array;
 
 import java.util.Arrays;
 
@@ -12,7 +12,7 @@ public class ArraysCopyOfTest {
 
     public static void main(String[] args) {
         String[] strArr = new String[]{"1", "2", "3"};
-        String[] newStrArr = Arrays.copyOf(strArr, strArr.length+5);
+        String[] newStrArr = Arrays.copyOf(strArr, strArr.length + 5);
         System.out.println(strArr == newStrArr);
         System.out.println("newStrArr: " + newStrArr.length);
         for (String s : newStrArr) {
