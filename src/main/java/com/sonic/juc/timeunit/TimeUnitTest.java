@@ -14,7 +14,11 @@ public class TimeUnitTest {
 
         System.out.println(TimeUnit.MINUTES.toMillis(5));
 
-        TimeUnit.MINUTES.sleep(5);
+//        TimeUnit.MINUTES.sleep(5);
+
+        System.out.println(System.nanoTime());
+        System.out.println(System.currentTimeMillis());
+        System.out.println(TimeUnit.SECONDS.convert(1,TimeUnit.MINUTES ));
 
     }
 }
