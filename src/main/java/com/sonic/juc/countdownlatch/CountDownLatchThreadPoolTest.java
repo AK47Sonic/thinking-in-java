@@ -47,6 +47,7 @@ public class CountDownLatchThreadPoolTest {
 
         System.out.println("Wait all child thread over!");
         countDownLatch.await();
+        System.out.println(countDownLatch.getCount());
         System.out.println("All child thread over!");
         executorService.shutdown();
 

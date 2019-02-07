@@ -20,6 +20,7 @@ public class CyclicBarrierTest {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            System.out.println("NumberWaiting: " + cyclicBarrier.getNumberWaiting());
             System.out.println(Thread.currentThread() + "task1 merge result");
         }
     });
@@ -59,6 +60,8 @@ public class CyclicBarrierTest {
 
         System.out.println("Shut down thread pool");
         System.out.println("Sleep is over");
+//        Thread.sleep(2000);
+//        cyclicBarrier.reset();
         executorService.shutdown();
 
     }
