@@ -30,8 +30,8 @@
         - Error
     2. 异常跟踪: `private Throwable cause`
     3. `fillInStackTrace`性能问题
-        - 通过JVM参数控制异常栈深度
-        - 通过Logback配置深度
+        - 方法一：JVM 参数控制栈深度（物理屏蔽）
+        - 方法二：logback 日志框架控制堆栈输出深度（逻辑屏蔽）
 
 6. 语言
     - 静态语言：是编译执行，编译成字节码，解释成机器码执行（java）
