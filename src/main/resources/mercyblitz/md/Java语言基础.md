@@ -63,3 +63,18 @@
         return super.hashcode();
     }
     ```
+10. 模块化
+    - 例子module-info.java
+    ```
+    mudule lesson1 {
+        requires java.base; //默认导入，可以不写 
+        // requires java.sql; //依赖SQL（JDBC）
+        exports com.segmentfault.java.lesson1; //包下面一定要有类， 并非所有的public class都可以被使用，需要exports配合
+        exports transitive java.sql; //传递依赖，可以使用Logger
+    }
+    ```
+    ![module](../pic/module-info.JPG)
+
+11. printStackTrace性能问题
+    - printStackTrace()方法会导致异常堆栈输出到标准错误，标准错误是操作系统共享的，进程之间会有切换，A,B两个进程同时往标准输出写，A写的时候，B要等待。
+
