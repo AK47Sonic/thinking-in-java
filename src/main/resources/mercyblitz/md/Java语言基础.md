@@ -79,4 +79,12 @@
     - printStackTrace()方法会导致异常堆栈输出到标准错误，标准错误是操作系统共享的，进程之间会有切换，A,B两个进程同时往标准输出写，A写的时候，B要等待。
 
 12. String基础知识
+
 13. StringBuilder和StringBuffer
+
+14. 深copy和浅copy （克隆的性能代价比new的代价要小）
+
+15. IDEA的debugger，开启所有类的[debug](../pic/debugger.JPG)
+
+
+
