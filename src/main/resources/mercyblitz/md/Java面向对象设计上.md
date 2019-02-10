@@ -15,7 +15,27 @@
     - protected //不修饰在最外层类上
     - private //不能修饰在最外层类上
     
-3. 内置类（类的成员）
+3. 内置类（相当于类的成员，所以private无效）
+    1. 被编译成一个完全独立的.class文件，名称为OuterClass$InnerClass.class的形式
+    2. 分类 [Demo](../../../java/com/sonic/basic/InnerClassTest.java)
+        - 静态内部类
+            - 被编译成一个完全独立的.class文件，名称为OuterClass$InnerClass.class的形式
+            - 只可以访问外部类的静态成员和静态方法，包括了私有的静态成员和方法
+            - 静态内部类可以定义静态和非静态成员
+            - 访问方式
+                - 外部类访问内部类 `new InnerClass();`
+                - 外部类之外创建内部类 `new OuterClass.InnerClass();`
+                - 内部类访问外部类的成员 `Outerclass.member`
+                
+        - 成员内部类
+            - 它可以访问它的外部类的所有成员变量和方法，不管是静态的还是非静态的都可以
+            - 成员内部类不可以定义静态属性和静态方法
+            - 访问方式
+                - 外部类访问内部类 `this.new InnerClass();`
+                - 外部类之外创建内部类 `(new Outerclass()).new Innerclass();`
+                - 内部类访问外部类的成员 `Outerclass.this.member`
+
+    3. 使用场景
     - 临时数据存储,不希望外面可以访问 `ThreadLocal.ThreadLocalMap`
     - 特殊用途的API `Collections.UnmodifiableCollection`
     - Builder模式 `Stream.Builder`
@@ -33,7 +53,7 @@
     - Abstract + 名词
     - Base + 名词
     
-7. 枚举 （TimeUnit）
+7. 枚举 （TimeUnit）[Demo](../../../java/com/sonic/lang/WorkDayTest.java)
     - 枚举其实就是一个final class
     - 成员为public static final
     - 继承于java.lang.Enum
