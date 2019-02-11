@@ -86,5 +86,16 @@
 
 15. IDEA的debugger，开启所有类的[debug](../pic/debugger.JPG)
 
+16. 接口和抽象类的区别
+    - 抽象类的静态方法可以被继承，但接口的静态方法不能被继承 [demo](../../../java/com/sonic/lang/PersonAbstract.java)
 
+17. 继承 [demo](../../../java/com/sonic/inherit/StaticExtendsTest.java)
+    - java中静态属性和静态方法可以被继承，但是不能被重写({@code @Overwrite})
+    - 非静态方法表现多态看子类对象，静态方法则和子类对象类型无关，看引用对象类型。
+    - 因此静态方法没必要用final修饰，因为不存在重写的情况。
+    
+18. volatile
+    1. 指令重排序规则[demo](../../../java/com/sonic/gof23/singleton/DoubleCheckSingleton.java)
+        - 写volatile 变量时，可以确保volatile 写之前的操作不会被编译器重排序到volatile写之后。
+        - 读volatile 变量时，可以确保volatile 读之后的操作不会被编译器重排序到volatile读之前。
 

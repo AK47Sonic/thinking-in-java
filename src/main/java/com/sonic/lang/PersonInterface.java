@@ -16,5 +16,6 @@ public class PersonInterface implements Visible {
         new PersonInterface().see();
 //        PersonInterface.print(); //接口的静态方法不能被继承
 //        new PersonInterface().print();
+//        Visible.print();
     }
 }
