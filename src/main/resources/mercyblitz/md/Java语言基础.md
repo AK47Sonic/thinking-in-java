@@ -98,4 +98,7 @@
     1. 指令重排序规则[demo](../../../java/com/sonic/gof23/singleton/DoubleCheckSingleton.java)
         - 写volatile 变量时，可以确保volatile 写之前的操作不会被编译器重排序到volatile写之后。
         - 读volatile 变量时，可以确保volatile 读之后的操作不会被编译器重排序到volatile读之前。
+    
+19. `@Interface`
+    -  其实就是interface, extends Annotation, 使用`AnnotationInvocationHandler`动态代理实现
 
