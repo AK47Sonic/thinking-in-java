@@ -78,9 +78,28 @@
     - final
     <br/>final修饰变量时，初衷是告诉编译器，这个变量生而不变，可以使劲优化
         
-     
-        
-        
+- synchronized 
+    <br/>锁模型
+    ![锁模型](../pic/锁模型.JPG)
+    <br/>当修饰静态方法的时候，锁定的是当前类的 Class 对象
+    ```java
+    class X {
+      // 修饰静态方法
+      synchronized(X.class) static void bar() {
+        // 临界区
+      }
+    }
+    ```
+    <br/>当修饰非静态方法的时候，锁定的是当前实例对象this
+    ```java
+    class X {
+      // 修饰非静态方法
+      synchronized(this) void foo() {
+        // 临界区
+      }
+    }
+    ``` 
+    <br/>加锁本质就是在锁对象的对象头中写入当前线程id，但是new object每次在内存中都是新对象，所以加锁无效。       
 
 #### 心得
 - 锁
