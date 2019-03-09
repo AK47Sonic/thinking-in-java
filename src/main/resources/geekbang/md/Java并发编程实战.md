@@ -82,7 +82,7 @@
     <br/>锁模型  
     ![锁模型](../pic/锁模型.JPG)
     <br/>当修饰静态方法的时候，锁定的是当前类的 Class 对象
-    ```java
+    ```test
     class X {
       // 修饰静态方法
       synchronized(X.class) static void bar() {
@@ -91,7 +91,7 @@
     }
     ```
     <br/>当修饰非静态方法的时候，锁定的是当前实例对象this
-    ```java
+    ```test
     class X {
       // 修饰非静态方法
       synchronized(this) void foo() {
@@ -100,6 +100,102 @@
     }
     ``` 
     <br/>加锁本质就是在锁对象的对象头中写入当前线程id，但是new object每次在内存中都是新对象，所以加锁无效。       
+
+- 线程阻塞
+<br/>CPU放弃当前线程的执行，进行了线程切换，从而造成阻塞
+    - IO 阻塞
+    - sleep 阻塞
+    - wait 阻塞
+    - 同步锁阻塞
+
+- 死锁产生的原因  
+![死锁的原因](../pic/死锁产生的原因.JPG)
+
+- 打破规则，预防死锁  
+![预防死锁](../pic/预防死锁.JPG)
+
+    1. 一次性申请所有资源
+    ```test
+    class Allocator {
+      private List<Object> als =
+        new ArrayList<>();
+      // 一次性申请所有资源
+      synchronized boolean apply(
+        Object from, Object to){
+        if(als.contains(from) ||
+             als.contains(to)){
+          return false;  
+        } else {
+          als.add(from);
+          als.add(to);  
+        }
+        return true;
+      }
+      // 归还资源
+      synchronized void free(
+        Object from, Object to){
+        als.remove(from);
+        als.remove(to);
+      }
+    }
+    
+    class Account {
+      // actr 应该为单例
+      private Allocator actr;
+      private int balance;
+      // 转账
+      void transfer(Account target, int amt){
+        // 一次性申请转出账户和转入账户，直到成功
+        while(!actr.apply(this, target));
+        try{
+          // 锁定转出账户
+          synchronized(this){              
+            // 锁定转入账户
+            synchronized(target){           
+              if (this.balance > amt){
+                this.balance -= amt;
+                target.balance += amt;
+              }
+            }
+          }
+        } finally {
+          actr.free(this, target);
+        }
+      } 
+    }
+    ```
+    2. 抢占不到就释放
+    <br/> 使用Lock实现，synchronized做不到
+    
+    3. 按相同顺序申请资源
+    ```test
+    class Account {
+      private int id;
+      private int balance;
+      // 转账
+      void transfer(Account target, int amt){
+        Account left = this        ①
+        Account right = target;    ②
+        if (this.id > target.id) { ③
+          left = target;           ④
+          right = this;            ⑤
+        }                          ⑥
+        // 锁定序号小的账户
+        synchronized(left){
+          // 锁定序号大的账户
+          synchronized(right){ 
+            if (this.balance > amt){
+              this.balance -= amt;
+              target.balance += amt;
+            }
+          }
+        }
+      } 
+    }
+    ```
+    
+    
+
 
 #### 心得
 - 锁
