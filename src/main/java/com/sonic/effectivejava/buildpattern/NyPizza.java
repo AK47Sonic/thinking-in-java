@@ -3,18 +3,18 @@ package com.sonic.effectivejava.buildpattern;
 import java.util.Objects;
 
 /**
- * MyPizza
+ * NyPizza
  *
  * @author Sonic
  * @since 2019/3/16
  */
-public class MyPizza extends Pizza {
+public class NyPizza extends Pizza {
 
     public enum Size {SMALL, MEDIUM, LARGE}
 
     private final Size size;
 
-    private MyPizza(Builder builder) {
+    private NyPizza(Builder builder) {
         super(builder);
         this.size = builder.size;
     }
@@ -33,7 +33,7 @@ public class MyPizza extends Pizza {
 
         @Override
         public Pizza build() {
-            return new MyPizza(this);
+            return new NyPizza(this);
         }
     }
 
