@@ -13,7 +13,7 @@ class SessionDTO implements Serializable {
     private int data; // Stores session data
 
     // Session activation time (creation, deserialization)
-    private long activationTime;
+    private transient long activationTime;
 
     public SessionDTO(int data) {
         this.data = data;
