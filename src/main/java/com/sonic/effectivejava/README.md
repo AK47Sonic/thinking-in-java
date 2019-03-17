@@ -34,4 +34,16 @@ public class UtilityClass {
 #### 避免创建不必要的对象
 对象可以复用尽可能复用，节省空间又提升性能。
 
+#### 消除过期对象引用
+把对象引用设置为null
+```text
+//    public Object pop() {
+//        if (size == 0)
+//            throw new EmptyStackException();
+//        Object result = elements[--size];
+//        elements[size] = null; // Eliminate obsolete reference
+//        return result;
+//    }
+```
+
 
