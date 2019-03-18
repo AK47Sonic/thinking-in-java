@@ -35,7 +35,7 @@ public class UtilityClass {
 对象可以复用尽可能复用，节省空间又提升性能。
 
 #### 消除过期对象引用
-把对象引用设置为null
+- 把对象引用设置为null
 ```text
 //    public Object pop() {
 //        if (size == 0)
@@ -45,5 +45,5 @@ public class UtilityClass {
 //        return result;
 //    }
 ```
-
+- 一个对象的finalize()方法只会被调用一次, System.gc();一定会调用一次finalize方法，但是未必会触发真正的GC
 
