@@ -9,3 +9,19 @@
 - ClassLoader 类中的 findSystemClass 方法
 - ClassLoader 类中的 loadClass 方法
 
+3. RuntimeException
+- IllegalArgumentException
+- IllegalMonitorStateException
+- NullPointerException
+- IndexOutOfBoundsException
+
+4. Checked Exception
+- IOException
+- InterruptedException
+
+5. Error
+- AssertionError
+- OutOfMemoryError
+- StackOverflowError
+
+
