@@ -24,4 +24,10 @@
 - OutOfMemoryError
 - StackOverflowError
 
+6. 枚举
+- final class
+- 继承java.lang.Enum，所以不能再继承别的类
+- 私有构造
+- 可以实现别的接口
+
 
