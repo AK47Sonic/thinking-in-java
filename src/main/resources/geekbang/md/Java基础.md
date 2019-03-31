@@ -14,6 +14,7 @@
 - IllegalMonitorStateException
 - NullPointerException
 - IndexOutOfBoundsException
+- UnsupportedOperationException
 
 4. Checked Exception
 - IOException
