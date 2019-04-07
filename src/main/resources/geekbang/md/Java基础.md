@@ -16,6 +16,7 @@
     - IndexOutOfBoundsException
     - UnsupportedOperationException
     - SecurityException
+    - IllegalThreadStateException
 
 4. Checked Exception  
     - IOException
