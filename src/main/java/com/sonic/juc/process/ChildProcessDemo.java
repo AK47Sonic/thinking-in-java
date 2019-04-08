@@ -12,10 +12,17 @@ import java.lang.management.OperatingSystemMXBean;
  */
 public class ChildProcessDemo {
     public static void main(String[] args) throws IOException {
-        //IDEA(主进程) -> 启动 ChildProcessDemo -> Windows 计算器 (calc)
+        //IDEA(主进程) -> 启动 ChildProcessDemo -> 打开网页
         OperatingSystemMXBean operatingSystemMXBean = ManagementFactory.getOperatingSystemMXBean();
         if (operatingSystemMXBean.getName().startsWith("Windows")) {
-            Runtime.getRuntime().exec("calc");
+            Process process = Runtime.getRuntime().exec("cmd -loglevel quiet /k start http://www.baidu.com");
+//          阻塞有问题？
+//            try {
+//                process.waitFor();
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+
         }
     }
 }
