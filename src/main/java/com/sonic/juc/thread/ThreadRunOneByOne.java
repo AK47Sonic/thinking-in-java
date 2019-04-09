@@ -1,7 +1,7 @@
 package com.sonic.juc.thread;
 
 /**
- * TODO
+ * ThreadRunOneByOne
  *
  * @author Sonic
  * @since 2019/4/8
