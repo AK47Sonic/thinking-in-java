@@ -48,4 +48,22 @@
 - Field
     - field.get(Object obj)，意思是获取obj的Field的值。如果Field是static，则obj传null，如果不是，则传实例对象
 
-
+9. 集合
+- List
+    - ArrayList
+    - LinkedList
+    - CopyOnWriteArrayList (JUC)
+    
+- Set
+    - HashSet
+    - TreeSet
+    - CopyOnWriteArraySet (JUC)
+    - ConcurrentSkipListSet (JUC)
+    
+- Map
+    - HashMap
+    - TreeMap
+    - ConcurrentHashMap (JUC)
+    - ConcurrentSkipListMap(JUC)
+    
+    

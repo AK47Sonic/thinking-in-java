@@ -31,7 +31,7 @@ public class CustomThreadPoolExecutor extends ThreadPoolExecutor {
     @Override
     protected void afterExecute(Runnable r, Throwable t) {
         if(t != null) {
-            System.out.println("afterExecute: " + Thread.currentThread().getName() + ", " + t.getMessage());
+            System.out.println("afterExecute: " + Thread.currentThread().getName() + ", " + t);
             exceptionCount++;
         }
         else
