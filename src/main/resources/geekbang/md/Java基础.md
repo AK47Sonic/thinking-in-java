@@ -52,7 +52,8 @@
 - List
     - ArrayList
     - LinkedList
-    - CopyOnWriteArrayList (JUC)
+    - Vector 所有方法加了synchronized, iterate遍历是fail-fast
+    - CopyOnWriteArrayList (JUC) iterate遍历是弱一致性实现
     
 - Set
     - HashSet
