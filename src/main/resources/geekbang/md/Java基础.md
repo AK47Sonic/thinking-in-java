@@ -73,6 +73,7 @@
     
 - Queue
     - LinkedTransferQueue (相比LinkedBlockingQueue性能更好)
-    - LinkedBlockingQueue
-    
+    - BlockingQueue
+        - LinkedBlockingQueue
+        - PriorityBlockingQueue  
    
