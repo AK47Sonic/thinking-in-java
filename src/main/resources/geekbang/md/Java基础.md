@@ -52,19 +52,27 @@
 - List
     - ArrayList
     - LinkedList
+    - Collections.synchronizedList
     - Vector 所有方法加了synchronized, iterate遍历是fail-fast
     - CopyOnWriteArrayList (JUC) iterate遍历是弱一致性实现
     
 - Set
     - HashSet
     - TreeSet
+    - Collections.synchronizedSet
     - CopyOnWriteArraySet (JUC)
     - ConcurrentSkipListSet (JUC)
     
 - Map
-    - HashMap
+    - HashMap （key/value都可以为null，数组+红黑树，阈值到8）
     - TreeMap
-    - ConcurrentHashMap (JUC)
-    - ConcurrentSkipListMap(JUC)
+    - Collections.synchronizedMap
+    - ConcurrentHashMap (JUC) （key/value都不能为null， 数组+红黑树，阈值到8，写加锁，内存占用小，O(1)）
+    - ConcurrentSkipListMap(JUC) （写不加锁，内存占用大，空间换时间,O(logn)）
+    - Hashtable （key/value都不能为null, 数组+链表）
     
+- Queue
+    - LinkedTransferQueue (相比LinkedBlockingQueue性能更好)
+    - LinkedBlockingQueue
     
+   
