@@ -28,7 +28,7 @@ public class ThreadSafeCollectionQuestion {
 //        set = Collections.synchronizedSet(set);
 //        map = Collections.synchronizedMap(map);
 //
-//       list = new CopyOnWriteArrayList<>(list);
+//       list = new CopyOnWriteArrayListDemo<>(list);
 //        set = new CopyOnWriteArraySet<>(set);
 //        map = new ConcurrentHashMap<>(map);
 

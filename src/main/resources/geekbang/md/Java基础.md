@@ -17,6 +17,7 @@
     - UnsupportedOperationException
     - SecurityException
     - IllegalThreadStateException
+    - ConcurrentModificationException
 
 4. Checked Exception  
     - IOException
@@ -49,14 +50,14 @@
     - field.get(Object obj)，意思是获取obj的Field的值。如果Field是static，则obj传null，如果不是，则传实例对象
 
 9. 集合
-- List
-    - ArrayList
+- List (可以通过下标随机访问)
+    - ArrayList (fail fast)
     - LinkedList
     - Collections.synchronizedList
     - Vector 所有方法加了synchronized, iterate遍历是fail-fast
-    - CopyOnWriteArrayList (JUC) iterate遍历是弱一致性实现
+    - CopyOnWriteArrayList (JUC) iterate遍历是弱一致性实现(weakly consistent)
     
-- Set
+- Set (没有get方法的，只能遍历获取)
     - HashSet
     - TreeSet
     - Collections.synchronizedSet

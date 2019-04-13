@@ -16,7 +16,7 @@ public class ArraysAsListMethodQuestion {
         list.set(3, 9);
         list.forEach(System.out::println);
         // Java < 5, Vector Collections.synchronizedList
-        // Java 5+ CopyOnWriteArrayList
+        // Java 5+ CopyOnWriteArrayListDemo
         // Java 9+ List.of 只读
 
     }
