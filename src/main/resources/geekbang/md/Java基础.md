@@ -51,11 +51,11 @@
 
 9. 集合
 - List (可以通过下标随机访问)
-    - ArrayList (fail fast)
+    - ArrayList (fail fast, 通过迭代器remove) 
     - LinkedList
     - Collections.synchronizedList
     - Vector 所有方法加了synchronized, iterate遍历是fail-fast
-    - CopyOnWriteArrayList (JUC) iterate遍历是弱一致性实现(weakly consistent)
+    - CopyOnWriteArrayList (JUC) iterate遍历是弱一致性实现(weakly consistent)，迭代器遍历，直接本体remove
     
 - Set (没有get方法的，只能遍历获取)
     - HashSet
