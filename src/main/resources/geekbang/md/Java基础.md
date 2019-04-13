@@ -76,4 +76,14 @@
     - BlockingQueue
         - LinkedBlockingQueue
         - PriorityBlockingQueue  
-   
+
+10. 并发
+- Lock
+    - CountDownLatch (countDown -1, 减到0返回，后续在进入的线程不再减，await不再阻塞)
+    - Semaphore (acquire -1, 可以一直减，如果信号量是负值，则阻塞。release +1, 唤醒一个)
+    - CyclicBarrier (await -1, 当减到0后，会重置为初始值，也就是如果继续减，最终不是初始值得倍数就会阻塞)
+
+- Thread
+
+- Future
+    - cancel(true)才有实际中断的意义，cancel(false)只是修改Future标志位而已。

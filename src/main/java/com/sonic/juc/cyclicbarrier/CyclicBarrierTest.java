@@ -12,21 +12,23 @@ import java.util.concurrent.Executors;
  */
 public class CyclicBarrierTest {
 
-    private static CyclicBarrier cyclicBarrier = new CyclicBarrier(2, new Runnable() {
-        @Override
-        public void run() {
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            System.out.println("NumberWaiting: " + cyclicBarrier.getNumberWaiting());
-            System.out.println(Thread.currentThread() + "task1 merge result");
-        }
-    });
+//    private static CyclicBarrier cyclicBarrier = new CyclicBarrier(2, new Runnable() {
+//        @Override
+//        public void run() {
+//            try {
+//                Thread.sleep(2000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//            System.out.println("NumberWaiting: " + cyclicBarrier.getNumberWaiting());
+//            System.out.println(Thread.currentThread() + "task1 merge result");
+//        }
+//    });
+
+    private static CyclicBarrier cyclicBarrier = new CyclicBarrier(2);
 
     public static void main(String[] args) throws InterruptedException {
-        ExecutorService executorService = Executors.newFixedThreadPool(2);
+        ExecutorService executorService = Executors.newFixedThreadPool(5);
         executorService.submit(new Runnable() {
             @Override
             public void run() {
@@ -48,6 +50,51 @@ public class CyclicBarrierTest {
             public void run() {
                 try {
                     System.out.println(Thread.currentThread() + " task1-2");
+                    System.out.println(Thread.currentThread() + " enter in barrier");
+                    cyclicBarrier.await();
+                    Thread.sleep(2000);
+                    System.out.println(Thread.currentThread() + " enter out barrier");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        executorService.submit(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    System.out.println(Thread.currentThread() + " task1-3");
+                    System.out.println(Thread.currentThread() + " enter in barrier");
+                    cyclicBarrier.await();
+                    Thread.sleep(2000);
+                    System.out.println(Thread.currentThread() + " enter out barrier");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        executorService.submit(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    System.out.println(Thread.currentThread() + " task1-4");
+                    System.out.println(Thread.currentThread() + " enter in barrier");
+                    cyclicBarrier.await();
+                    Thread.sleep(2000);
+                    System.out.println(Thread.currentThread() + " enter out barrier");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        executorService.submit(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    System.out.println(Thread.currentThread() + " task1-5");
                     System.out.println(Thread.currentThread() + " enter in barrier");
                     cyclicBarrier.await();
                     Thread.sleep(2000);
