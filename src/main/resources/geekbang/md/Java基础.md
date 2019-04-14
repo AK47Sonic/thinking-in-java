@@ -18,6 +18,7 @@
     - SecurityException
     - IllegalThreadStateException
     - ConcurrentModificationException
+    - IllegalStateException
 
 4. Checked Exception  
     - IOException
@@ -62,20 +63,22 @@
     - TreeSet
     - Collections.synchronizedSet
     - CopyOnWriteArraySet (JUC)
-    - ConcurrentSkipListSet (JUC)
+    - ConcurrentSkipListSet (JUC) 无锁
     
 - Map
     - HashMap （key/value都可以为null，数组+红黑树，阈值到8）
     - TreeMap
     - Collections.synchronizedMap
-    - ConcurrentHashMap (JUC) （key/value都不能为null， 数组+红黑树，阈值到8，写加锁，内存占用小，O(1)）
-    - ConcurrentSkipListMap(JUC) （写不加锁，内存占用大，空间换时间,O(logn)）
+    - ConcurrentHashMap (JUC) （key/value都不能为null， 数组+红黑树，阈值到8，读无锁，写加锁，内存占用小，O(1)，并发集合key/value都不允许为空，确保无歧义【看不见/无值】）
+    - ConcurrentSkipListMap(JUC) （没有HashMap快，但是保证了有序，无锁，写不加锁，空间换时间的跳表，所以内存占用大，搜索和插入都是O(logn)）
     - Hashtable （key/value都不能为null, 数组+链表）
     
 - Queue
     - LinkedTransferQueue (相比LinkedBlockingQueue性能更好)
-    - BlockingQueue
+    - BlockingQueue (读加锁，写加锁，使用put，避免用offer，最好不用add)
         - LinkedBlockingQueue
+        - ArrayBlockingQueue
+        - SynchronousQueue (用put，take，不要用offer，offer的时候如果没有其他线程take，就直接失败)
         - PriorityBlockingQueue  
 
 10. 并发

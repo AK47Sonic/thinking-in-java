@@ -2,6 +2,7 @@ package com.sonic.juc.collection;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentSkipListMap;
 
 /**
  * HashMapValueIncrementDemo
@@ -19,10 +20,27 @@ public class HashMapValueIncrementDemo {
 
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
 //            fastApproach(entry);
-            slowApproach(entry, map);
+//            slowApproach(entry, map);
         }
-        System.out.println(map);
+//        System.out.println(map);
 
+        // 注意： Java Concurrent Map 可能未实现 Map.Entry#setValue(Object)方法
+        ConcurrentSkipListMap<String, Integer> skipListMap = new ConcurrentSkipListMap<>();
+
+        skipListMap.put("A", 1);
+        skipListMap.put("B", 2);
+        skipListMap.put("C", 3);
+
+        demoMap(skipListMap);
+        System.out.println(skipListMap);
+
+    }
+
+    private static void demoMap(ConcurrentSkipListMap<String,Integer> skipListMap) {
+        for (Map.Entry<String, Integer> entry : skipListMap.entrySet()) {
+                        fastApproach(entry);
+//            slowApproach(entry, skipListMap);
+        }
     }
 
     private static void fastApproach(Map.Entry<String, Integer> entry) {
