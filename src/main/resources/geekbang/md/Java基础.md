@@ -69,17 +69,17 @@
     - HashMap （key/value都可以为null，数组+红黑树，阈值到8）
     - TreeMap
     - Collections.synchronizedMap
-    - ConcurrentHashMap (JUC) （key/value都不能为null， 数组+红黑树，阈值到8，读无锁，写加锁，内存占用小，O(1)，并发集合key/value都不允许为空，确保无歧义【看不见/无值】）
-    - ConcurrentSkipListMap(JUC) （没有HashMap快，但是保证了有序，无锁，写不加锁，空间换时间的跳表，所以内存占用大，搜索和插入都是O(logn)）
+    - ConcurrentHashMap (JUC) （key/value都不能为null， 数组+红黑树(解决hash冲突)，阈值到8，读无锁，写加锁，内存占用小，O(1)，适用：读多写少场景。并发集合key/value都不允许为空，确保无歧义【看不见/无值】）
+    - ConcurrentSkipListMap(JUC) （没有HashMap快，但是保证了有序，无锁，写不加锁，空间换时间的跳表，所以内存占用大，搜索和插入都是O(logn)，适用：读多写多场景）
     - Hashtable （key/value都不能为null, 数组+链表）
     
 - Queue
-    - LinkedTransferQueue (相比LinkedBlockingQueue性能更好)
     - BlockingQueue (读加锁，写加锁，使用put，避免用offer，最好不用add)
         - LinkedBlockingQueue
         - ArrayBlockingQueue
         - SynchronousQueue (用put，take，不要用offer，offer的时候如果没有其他线程take，就直接失败)
         - PriorityBlockingQueue  
+        - LinkedTransferQueue (无锁，相比LinkedBlockingQueue性能更好)
 
 10. 并发
 - Lock
@@ -90,4 +90,19 @@
 - Thread
 
 - Future
-    - cancel(true)才有实际中断的意义，cancel(false)只是修改Future标志位而已。
+    - cancel(true)才有实际中断的意义，cancel(false)只是修改Future标志位而已
+    
+- Reactive
+![Reactive](../pic/Reactive.JPG)
+
+- Java内存模型 Memory model   
+指导Java操作   
+
+- Happens-Before   
+强调前面写的，后面可见
+
+
+
+
+
+
