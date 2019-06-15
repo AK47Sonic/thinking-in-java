@@ -38,6 +38,18 @@ public class ClassLoadingDemo {
         System.out.println("userClass FromThreadContextClassLoader: " + userClassFromThreadContextClassLoader.hashCode());
         System.out.println(userClass == userClassFromThreadContextClassLoader);
 
+        // 重新替换掉上线文 ClassLoader
+
+        Thread.currentThread().setContextClassLoader(myClassLoader);
+        ClassLoader contextClassLoaderMyClassLoader = Thread.currentThread().getContextClassLoader();
+
+        Class<?> userClassFromMyClassLoader = contextClassLoaderMyClassLoader.loadClass(className);
+        System.out.println(userClassFromMyClassLoader);
+        System.out.println(userClass == userClassFromMyClassLoader);
+
+        System.out.println(userClassFromThreadContextClassLoader == userClassFromMyClassLoader);
+
+
     }
 
     static class MyClassLoader extends ClassLoader {
