@@ -7,4 +7,16 @@
     2. 如果对应的ClassLoader已经装载过，则会直接返回Class对象，返回的Class对象是根据去加载的ClassLoader去寻找。比如： MyClassLoader去加载，搜索的就是MyClassLoader
 
 - Class 加载检测-verbose:class
-
+- Java内存结构
+    - Java 堆
+        - -Xms
+        - -Xmx
+        - ![Heap](../pic/Javaheap.JPG)
+        - young(eden+survivor) + old
+    - 方法区
+    - JVM栈
+        - -Xss
+        - 原生类型（int）
+        - 引用对象
+    - 本地方法栈
+    - PC寄存器
