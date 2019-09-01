@@ -17,3 +17,11 @@
     ParallelGC  CMS  
     G1          G1  
     
+4. Reference
+    - SoftReference
+    - WeakReference
+    - FinalReference java内部使用，构造函数为私有，不能调用
+    - PhantomReference
+    
+5. Reference Queue 保留即将消亡的对象
+    
